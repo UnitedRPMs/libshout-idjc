@@ -1,6 +1,6 @@
 Name:               libshout-idjc
 Version:            2.3.1
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             http://prdownloads.sourceforge.net/project/idjc/libshout-idjc/libshout-idjc-%{version}.tar.gz
 URL:                http://sourceforge.net/projects/idjc/
@@ -34,12 +34,16 @@ make LDFLAGS+=-lspeex
 %install
 make install DESTDIR=%{buildroot}
 
+find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 %files 
 %defattr(-,root,root)
 %doc COPYING NEWS README
 %{_libdir}/libshout-idjc.a
-%{_libdir}/libshout-idjc.la
 %{_libdir}/libshout-idjc.so.3
 %{_libdir}/libshout-idjc.so.3.2.0
 
@@ -50,5 +54,9 @@ make install DESTDIR=%{buildroot}
 %{_libdir}/pkgconfig/shout-idjc.pc
 
 %changelog
+
+* Thu Apr 28 2016 David Vasquez <davidjeremias82 at gmail dot com> - 2.3.1-2
+- Rebuilt 
+
 * Mon Oct 27 2014 David Vasquez <davidjeremias82 at gmail dot com> - 2.3.1-1
 - Initial build
