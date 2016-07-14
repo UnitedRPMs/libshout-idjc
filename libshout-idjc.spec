@@ -1,6 +1,6 @@
 Name:               libshout-idjc
-Version:            2.3.1
-Release:            2%{?dist}
+Version:            2.4.1
+Release:            1%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             http://prdownloads.sourceforge.net/project/idjc/libshout-idjc/libshout-idjc-%{version}.tar.gz
 URL:                http://sourceforge.net/projects/idjc/
@@ -47,13 +47,19 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/libshout-idjc.so.3
 %{_libdir}/libshout-idjc.so.3.2.0
 
+
 %files devel
 %defattr(-,root,root)
 %{_includedir}/shoutidjc
 %{_libdir}/libshout-idjc.so
 %{_libdir}/pkgconfig/shout-idjc.pc
+%{_datadir}/aclocal/shout.m4
+
 
 %changelog
+
+* Thu Jun 30 2016 David Vasquez <davidjeremias82 at gmail dot com> - 2.4.1-1
+- Updated to 2.4.1
 
 * Thu Apr 28 2016 David Vasquez <davidjeremias82 at gmail dot com> - 2.3.1-2
 - Rebuilt 
