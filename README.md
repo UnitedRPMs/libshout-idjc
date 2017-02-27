@@ -2,7 +2,7 @@
  
 Summary:            Libshout modified for IDJC
  
-Version:            2.3.1
+Version:            2.4.1
  
 License:            LGPL-2.1+
  

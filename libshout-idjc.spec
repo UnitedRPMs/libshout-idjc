@@ -1,6 +1,6 @@
 Name:               libshout-idjc
 Version:            2.4.1
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             http://prdownloads.sourceforge.net/project/idjc/libshout-idjc/libshout-idjc-%{version}.tar.gz
 URL:                http://sourceforge.net/projects/idjc/
@@ -28,13 +28,14 @@ This is a modified version of libshout, for IDJC.
 %setup -q
 
 %build
-%configure
+%configure 
 make LDFLAGS+=-lspeex
 
 %install
 make install DESTDIR=%{buildroot}
 
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal/idjc-shout.m4
 
 %post -p /sbin/ldconfig
 
@@ -53,10 +54,13 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_includedir}/shoutidjc
 %{_libdir}/libshout-idjc.so
 %{_libdir}/pkgconfig/shout-idjc.pc
-%{_datadir}/aclocal/shout.m4
+%{_datadir}/aclocal/idjc-shout.m4
 
 
 %changelog
+
+* Sun Feb 26 2017 David Vasquez <davidjeremias82 at gmail dot com> - 2.4.1-2
+- Solved conflict with libshout
 
 * Thu Jun 30 2016 David Vasquez <davidjeremias82 at gmail dot com> - 2.4.1-1
 - Updated to 2.4.1
