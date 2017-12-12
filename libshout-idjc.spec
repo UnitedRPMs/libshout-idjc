@@ -47,6 +47,8 @@ mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal
 %{_libdir}/libshout-idjc.a
 %{_libdir}/libshout-idjc.so.3
 %{_libdir}/libshout-idjc.so.3.2.0
+%{_libdir}/ckport/db/libshout-idjc.ckport
+%{_docdir}/libshout-idjc/
 
 
 %files devel
