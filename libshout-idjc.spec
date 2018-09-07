@@ -1,5 +1,5 @@
 Name:               libshout-idjc
-Version:            2.4.2
+Version:            2.4.3
 Release:            1%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             https://sourceforge.net/projects/libshoutidjc.idjc.p/files/libshout-idjc-%{version}.tar.gz
@@ -60,6 +60,9 @@ mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal
 
 
 %changelog
+
+* Thu Sep 06 2018 - David Va <davidva AT tuta DOT io> 2.4.3-1
+- Updated to 2.4.3
 
 * Mon Dec 11 2017 Francisco de la Peña <fran at fran dot cr> - 2.4.2-1
 - Updated to 2.4.2
