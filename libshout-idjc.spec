@@ -10,8 +10,9 @@ BuildRoot:          %{_tmppath}/build-%{name}-%{version}
 BuildRequires:      libogg-devel
 BuildRequires:      libvorbis-devel
 BuildRequires:      speex-devel
-BuildRequires:      gcc make glibc-devel pkgconfig
+BuildRequires:      make glibc-devel pkgconfig
 BuildRequires:      autoconf automake libtool
+BuildRequires:      gcc-c++
 
 %description
 This is a modified version of libshout, for IDJC.
@@ -35,7 +36,7 @@ make
 make install DESTDIR=%{buildroot}
 
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
-mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal/idjc-shout.m4
+#mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal/idjc-shout.m4
 
 %post -p /sbin/ldconfig
 
@@ -48,15 +49,15 @@ mv -f %{buildroot}/%{_datadir}/aclocal/shout.m4 %{buildroot}/%{_datadir}/aclocal
 %{_libdir}/libshout-idjc.so.3
 %{_libdir}/libshout-idjc.so.3.2.0
 %{_libdir}/ckport/db/libshout-idjc.ckport
-%{_docdir}/libshout-idjc/
-
+%{_docdir}/libshout-idjc/example.c
+%{_docdir}/libshout-idjc/nonblocking.c
 
 %files devel
 %defattr(-,root,root)
 %{_includedir}/shoutidjc
 %{_libdir}/libshout-idjc.so
 %{_libdir}/pkgconfig/shout-idjc.pc
-%{_datadir}/aclocal/idjc-shout.m4
+#{_datadir}/aclocal/idjc-shout.m4
 
 
 %changelog
