@@ -1,17 +1,38 @@
+#
+# spec file for package libshout-idjc
+#
+# Copyright (c) 2020 UnitedRPMs.
+#
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An "Open Source License" is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
+
+# Please submit bugfixes or comments via https://goo.gl/zqFJft
+#
+
 Name:               libshout-idjc
 Version:            2.4.3
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             https://sourceforge.net/projects/libshoutidjc.idjc.p/files/libshout-idjc-%{version}.tar.gz
 URL:                http://sourceforge.net/projects/libshoutidjc.idjc.p/
 Group:              System/Libraries
 License:            LGPL-2.1+
-BuildRoot:          %{_tmppath}/build-%{name}-%{version}
+
 BuildRequires:      libogg-devel
 BuildRequires:      libvorbis-devel
 BuildRequires:      speex-devel
-BuildRequires:      make glibc-devel pkgconfig
-BuildRequires:      autoconf automake libtool
+BuildRequires:      make 
+BuildRequires:      glibc-devel 
+BuildRequires:      pkgconfig
+BuildRequires:      autoconf 
+BuildRequires:      automake 
+BuildRequires:      libtool
 BuildRequires:      gcc-c++
 
 %description
@@ -61,6 +82,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+
+* Tue Feb 11 2020 - David Va <davidva AT tuta DOT io> 2.4.3-2
+- Rebuilt
 
 * Thu Sep 06 2018 - David Va <davidva AT tuta DOT io> 2.4.3-1
 - Updated to 2.4.3

@@ -3,4 +3,6 @@ BUILDROOT/*
 RPMS/*
 SPECS/*
 SRPMS/*
-libshout-idjc*.gz
+*.gz
+*.rpm
+.directory
