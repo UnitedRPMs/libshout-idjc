@@ -1,7 +1,7 @@
 #
 # spec file for package libshout-idjc
 #
-# Copyright (c) 2020 UnitedRPMs.
+# Copyright (c) 2021 UnitedRPMs.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -16,7 +16,7 @@
 #
 
 Name:               libshout-idjc
-Version:            2.4.3
+Version:            2.4.4
 Release:            2%{?dist}
 Summary:            Libshout modified for IDJC
 Source:             https://sourceforge.net/projects/libshoutidjc.idjc.p/files/libshout-idjc-%{version}.tar.gz
@@ -82,6 +82,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+
+* Mon Feb 15 2021 - David Va <davidva AT tuta DOT io> 2.4.4-2
+- Updated to 2.4.4
 
 * Tue Feb 11 2020 - David Va <davidva AT tuta DOT io> 2.4.3-2
 - Rebuilt
